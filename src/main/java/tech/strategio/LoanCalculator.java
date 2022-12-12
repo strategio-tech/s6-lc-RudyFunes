@@ -8,12 +8,19 @@ public class LoanCalculator {
      * TODO: finish out this JavaDoc comment block.
      * FIXME: WHAT DOES THIS METHOD DO?
      * 
-     * @param ???
-     * @return ???
+     * @param amount Original loan
+     * @return amount owe after 3 consecutive monthly payments
      */
     static int getRemainingAmountIn3Months(int amount) {
-        // TODO: Rewrite this method
-        return -1;
+
+
+        int i =0;
+        while(i  < 3){                                  // loop number of month you want to deduct from original loan
+            int monthlyPayment = (amount * 10) /100;    // calculate the amount to pay each month
+            amount -= monthlyPayment;                   //  subtract monthly payment from loan balance
+            i++;
+        }
+        return amount;
     }
 
     public static void main(String[] args) {
